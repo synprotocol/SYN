@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="1200" viewBox="0 0 300 300" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="glowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00ff9d" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#00ff9d" stop-opacity="0" />
+    </linearGradient>
+    
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Fond noir circulaire -->
+  <circle 
+    cx="150" 
+    cy="150" 
+    r="150" 
+    fill="#0a0c10"
+  />
+
+  <!-- Cercle externe -->
+  <circle 
+    cx="150" 
+    cy="150" 
+    r="140" 
+    fill="none" 
+    stroke="url(#glowGradient)" 
+    strokeWidth="1.5"
+  />
+
+  <!-- Hexagone central -->
+  <path
+    d="M150 40L245 95L245 205L150 260L55 205L55 95Z"
+    fill="none"
+    stroke="#00ff9d"
+    strokeWidth="2.5"
+    opacity="0.3"
+  />
+
+  <!-- Lignes de connexion internes -->
+  <g opacity="0.5">
+    <line x1="150" y1="40" x2="150" y2="260" stroke="#00ff9d" strokeWidth="0.75" />
+    <line x1="55" y1="95" x2="245" y2="205" stroke="#00ff9d" strokeWidth="0.75" />
+    <line x1="55" y1="205" x2="245" y2="95" stroke="#00ff9d" strokeWidth="0.75" />
+  </g>
+
+  <!-- Points de connexion -->
+  <g>
+    <circle cx="150" cy="40" r="4" fill="#00ff9d" />
+    <circle cx="245" cy="95" r="4" fill="#00ff9d" />
+    <circle cx="245" cy="205" r="4" fill="#00ff9d" />
+    <circle cx="150" cy="260" r="4" fill="#00ff9d" />
+    <circle cx="55" cy="205" r="4" fill="#00ff9d" />
+    <circle cx="55" cy="95" r="4" fill="#00ff9d" />
+  </g>
+
+  <!-- Point central avec glow -->
+  <circle 
+    cx="150" 
+    cy="150" 
+    r="6" 
+    fill="#00ff9d" 
+    filter="url(#glow)"
+  />
+
+  <!-- Texte SYN -->
+  <text
+    x="150"
+    y="165"
+    text-anchor="middle"
+    fill="#00ff9d"
+    font-size="36"
+    font-family="monospace"
+    font-weight="300"
+    letter-spacing="0.2em"
+  >
+    SYN
+  </text>
+</svg> 
